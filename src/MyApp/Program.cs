@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
 var collection = new ServiceCollection();
@@ -11,7 +10,7 @@ var studentClient = service.GetService<IStudentClient>();
 
 var students = await studentClient.GetStudents();
 foreach (var item in students.Content) {
-    Console.WriteLine(item.Name);
+    Console.WriteLine($"Student (Name={item.Name}, Id={item.Id})");
 }
 
 class Student {
